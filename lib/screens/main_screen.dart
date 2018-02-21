@@ -36,6 +36,13 @@ class _MainScreenState extends State<MainScreen> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.title),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.account_balance_wallet),
+            tooltip: 'View wallet',
+            onPressed: gotoWalletScreen,
+          )
+        ],
       ),
       body: new Center(
         child: new Column(
@@ -66,5 +73,13 @@ class _MainScreenState extends State<MainScreen> {
       context,
       screenName: Screen.ScreenShotPreviewScreen,
     );
+  }
+
+  void gotoWalletScreen() {
+    if (Globals.isWalletAvailable) {
+      Screens.push(context, screenName: Screen.WalletViewScreen);
+    } else {
+      Screens.push(context, screenName: Screen.OpenWalletScreen);
+    }
   }
 }

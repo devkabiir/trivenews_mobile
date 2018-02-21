@@ -87,6 +87,7 @@ class ScreenShotPreviewState extends State<ScreenShotPreview> {
           new SliverList(
             delegate: new SliverChildListDelegate(<Widget>[
               new Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   new TextField(
                     maxLines: 5,
@@ -114,6 +115,20 @@ class ScreenShotPreviewState extends State<ScreenShotPreview> {
                       ),
                     ],
                   ),
+                  new Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      new RaisedButton.icon(
+                        icon: new Icon(
+                          Icons.check,
+                          color: Colors.white,
+                        ),
+                        color: Colors.green,
+                        label: new Text('Submit Form'),
+                        onPressed: dropDownSelect,
+                      )
+                    ],
+                  )
                 ],
               )
             ]),

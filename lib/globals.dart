@@ -12,6 +12,7 @@ class TriveImagePicker {
 class Globals {
   static TriveImagePicker imagePicker = new TriveImagePicker();
   static File selectedImageFile;
+  static bool isWalletAvailable = false;
 }
 
 /// Checks if runtimeType match for [value] and [variable],
